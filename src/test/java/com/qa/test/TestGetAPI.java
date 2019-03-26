@@ -1,5 +1,8 @@
 package com.qa.test;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.api.test.TestBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,6 +29,8 @@ public class TestGetAPI extends TestBase {
 	@Test
 	public void apiGetTest() {
 		rest = new RestClient();
-		rest.getMethod(actualUrl);
+	List<List<HashMap<Object,Object>>> list=rest.getMethod(actualUrl);
+	System.out.println(list.get(0));
+	System.out.println(list.get(1));
 	}
 }
